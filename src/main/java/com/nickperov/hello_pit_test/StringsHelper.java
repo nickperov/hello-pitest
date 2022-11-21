@@ -1,5 +1,10 @@
 package com.nickperov.hello_pit_test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.UUID;
+
 public class StringsHelper {
 
 
@@ -12,6 +17,11 @@ public class StringsHelper {
         sb.setLength(Math.max(0, sb.length() - 1));
 
         return sb.toString();
+    }
+
+    public String buildUniqueKey(String orgId, int number) {
+        final var id = UUID.randomUUID();
+        return String.format("%s/%s/%S", orgId, number, id);
     }
 
 }
